@@ -3,7 +3,11 @@ require_once ('connect.php');
 session_start();
 $PID=$_POST['PID'];
 
-$q = "SELECT * FROM patient WHERE Patient_ID = '".$PID."'";
+$q = "SELECT * FROM patient WHERE Patient_ID = ".$PID;
+if (!$res) {
+    printf("Errormessage: %s\n", $mysqli->error);
+    exit();
+}
 $result = $mysqli->query($q);
 $row = $result->fetch_array();
 $pName = $row['Patient_Fname']." ".$row['Patient_Lname'];
