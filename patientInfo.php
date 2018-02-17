@@ -85,7 +85,7 @@ $pAddr = $row['Patient_Address'];
                                 <tbody>
 
                                 <?php
-                                $qLAB = "SELECT record.Rec_Date, record.Rec_Name,
+                                $qLAB = "SELECT record.Rec_ID,record.Rec_Date, record.Rec_Name,
                                           user.Doctor_Fname,user.Doctor_Lname,hospital.hospital_Name,
                                                 record.Prescription
                                           FROM record,patient,user,hospital 
@@ -114,7 +114,7 @@ $pAddr = $row['Patient_Address'];
                                                 }
                                                 ?></td>
                                             <td align="right">
-                                                <li><a form="#" class="button special">Details</a></li>
+                                                <li><a href="recordInfo.php?Rec_ID=<?php echo $row['Rec_ID']; ?>" class="button special">Details</a></li>
                                             </td>
                                         </tr>
                                         <?php
@@ -122,7 +122,7 @@ $pAddr = $row['Patient_Address'];
                                 }
                                 ?>
 
-                                
+
                                 </tbody>
                                 <tfoot>
                                 <tr>

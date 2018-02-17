@@ -1,4 +1,19 @@
-<!DOCTYPE HTML>
+<?php
+require_once ('connect.php');
+session_start();
+$RID=$_GET['Rec_ID'];
+$q = "SELECT * FROM record,patient,user 
+                WHERE Rec_ID = ".$RID."
+                AND record.Doctor_ID=user.Doctor_ID
+                AND record.Patient_ID=patient.Patient_ID";
+$result = $mysqli->query($q);
+$row = $result->fetch_array();
+$pName = $row['Patient_Fname']." ".$row['Patient_Lname'];
+$pGender = $row['Patient_Gender'];
+$pDOB = $row['Patient_Birth'];
+$pAddr = $row['Patient_Address'];
+
+?>
 <html>
 <head>
     <title>Record Information</title>
