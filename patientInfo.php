@@ -76,7 +76,7 @@
                                     <td>Dr.Nuttapol Saiboonreng</td>
                                     <td>Thammasat Hospital</td>
                                     <td>No</td>
-                                    <td>
+                                    <td align="right">
                                         <li><a href="#" class="button special">Details</a></li>
                                     </td>
                                 </tr>
@@ -86,7 +86,7 @@
                                     <td>Dr.Nuttapol Saiboonreng</td>
                                     <td>Thammasat Hospital</td>
                                     <td>No</td>
-                                    <td>
+                                    <td align="right">
                                         <li><a href="#" class="button special">Details</a></li>
                                     </td>
                                 </tr>
@@ -97,12 +97,48 @@
                                 </tr>
                                 </tfoot>
                             </table>
+                            <ul class="actions" align="center">
+                                <li><a href="#" class="button icon fa-download">Add more Record</a></li>
+                            </ul>
                         </div>
+
                 <hr>
-                <ul class="actions" align="center">
-                    <li><a href="#" class="button icon fa-download">Add more Record</a></li>
-                    <li><a href="#" class="button alt icon fa-search">Compare Others</a></li>
-                </ul>
+                <h3>Laboratory Result</h3>
+                <div class="table-wrapper" align="center">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Hospital Name</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>February 20, 2018</td>
+                            <td><b>X-ray films</b></td>
+                            <td>Thammasat Hospital</td>
+                            <td align="right">
+                                <li><a href="#" class="button special">Details</a></li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>February 20, 2018</td>
+                            <td><b>X-ray films</b></td>
+                            <td>Thammasat Hospital</td>
+                            <td align="right">
+                                <li><a href="#" class="button special">Details</a></li>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="6"></td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
 
             </div>
 

@@ -45,7 +45,7 @@
                 </form>
                 <hr>
 
-                <h3>Medical Record</h3>
+                <h3>Patient Record</h3>
                 <div class="table-wrapper" align="center">
                     <table>
                         <thead>
@@ -63,7 +63,7 @@
                             <td><b>Mr.Pasin Jiratthiticheep</b></td>
                             <td>Male</td>
                             <td>May 16, 2015</td>
-                            <td>
+                            <td align="right">
                                 <li><a href="#" class="button special">Details</a></li>
                             </td>
                         </tr>
@@ -72,7 +72,7 @@
                             <td><b>Mr.Pasin Jiratthiticheep</b></td>
                             <td>Male</td>
                             <td>May 16, 2015</td>
-                            <td>
+                            <td align="right">
                                 <li><a href="#" class="button special">Details</a></li>
                             </td>
                         </tr>
