@@ -25,7 +25,7 @@ $hName=$row['Hospital_Name'];
 $rName=$row['Rec_Name'];
 
 $q = "SELECT * FROM record,patient,user ,hospital
-                WHERE Rec_ID = ".$RID1."
+                WHERE Rec_ID = ".$RID2."
                 AND record.Doctor_ID=user.Doctor_ID
                 AND record.Patient_ID=patient.Patient_ID
                 AND user.Hospital_ID = hospital.Hospital_ID";
@@ -122,7 +122,7 @@ $rName2=$row['Rec_Name'];
                             <hr>
                             <ul class="actions" align="center">
                                 <li><a href="recordInfo.php?Rec_ID=<?php echo $rid; ?>" class="button icon fa-check">Done Comparison</a></li>
-                                <li><a href="#" class="button alt icon fa-search">see another</a></li>
+
                             </ul>
 
                         </div>
@@ -177,8 +177,7 @@ $rName2=$row['Rec_Name'];
 
                             <hr>
                             <ul class="actions" align="center">
-                                <li><a href="#" class="button icon">Previous</a></li>
-                                <li><a href="#" class="button alt icon">Next</a></li>
+                                <li><a href="search.php?rid1=<?php echo $rid; ?>" class="button alt icon fa-search">see other comparisons</a></li>
                             </ul>
 
                         </div>

@@ -100,7 +100,7 @@ $rName=$row['Rec_Name'];
                 <hr>
                 <ul class="actions" align="center">
                     <li><a href="record.php" class="button icon fa-download">Add more Record</a></li>
-                    <li><a href="search.php?rid1="<?php echo $rid; ?> class="button alt icon fa-search">Compare Others</a></li>
+                    <li><a href="search.php?rid1=<?php echo $rid; ?>" class="button alt icon fa-search">Compare Others</a></li>
                 </ul>
 
             </div>

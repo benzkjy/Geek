@@ -1,3 +1,30 @@
+<?php
+require_once ('connect.php');
+session_start();
+$RID1=$_GET['rid1'];
+//$q = "SELECT * FROM record,patient,user ,hospital
+//                WHERE Rec_ID = ".$RID1."
+//                AND record.Doctor_ID=user.Doctor_ID
+//                AND record.Patient_ID=patient.Patient_ID
+//                AND user.Hospital_ID = hospital.Hospital_ID
+//                ";
+//$result = $mysqli->query($q);
+//$row = $result->fetch_array();
+//$pName = $row['Patient_Fname']." ".$row['Patient_Lname'];
+//$pGender = $row['Patient_Gender'];
+//$PID = $row['Patient_ID'];
+//$pWH = $row['Weight']." kg ".$row['Height']." cm";
+//$pDOB = $row['Patient_Birth'];
+//$pAddr = $row['Patient_Address'];
+//$recDat = $row['Rec_Date'];
+//$Des = $row['Desc'];
+//$Pres = $row['Prescription'];
+//$rid=$row['Rec_ID'];
+//$dName=$row['Doctor_Fname']." ".$row['Doctor_Lname'];
+//$hName=$row['Hospital_Name'];
+//$rName=$row['Rec_Name'];
+
+?>
 <html>
 <head>
     <title>Search Information</title>
@@ -57,24 +84,35 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1234567890</td>
-                            <td><b>Mr.Pasin Jiratthiticheep</b></td>
-                            <td>Male</td>
-                            <td>May 16, 2015</td>
-                            <td align="right">
-                                <li><a href="#" class="button special">Details</a></li>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1234567890</td>
-                            <td><b>Mr.Pasin Jiratthiticheep</b></td>
-                            <td>Male</td>
-                            <td>May 16, 2015</td>
-                            <td align="right">
-                                <li><a href="#" class="button special">Details</a></li>
-                            </td>
-                        </tr>
+
+                        <?php
+                        $q = "SELECT * FROM record,patient,user ,hospital
+                WHERE Rec_ID = ".$RID1."
+                AND record.Doctor_ID=user.Doctor_ID
+                AND record.Patient_ID=patient.Patient_ID
+                AND user.Hospital_ID = hospital.Hospital_ID
+                ";
+                        $result = $mysqli->query($q);
+                        if (!$result) {
+                            echo "Select failed. Error: " . $mysqli->error;
+                        } else {
+                            while ($row = $result->fetch_array()) {
+                                ?>
+                                <tr>
+                                    <td><?php echo $row['Patient_ID'];?></td>
+                                    <td><b><?php echo $row['Patient_Fname']." ".$row['Patient_Lname'];?></b></td>
+                                    <td><?php echo $row['Patient_Gender'];?></td>
+                                    <td>May 16, 2015</td>
+                                    <td align="right">
+                                        <li><a href="compare.php?rid1=<?php echo $row['Rec_ID']; ?>&rid2=1" class="button special">Details</a></li>
+                                    </td>
+                                </tr>
+                                <?php
+                            }
+                        }
+                        ?>
+
+
                         </tbody>
                         <tfoot>
                         <tr>
