@@ -1,16 +1,17 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Patient Information</title>
+    <title>Hospital Collaboration Resource</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 <body class="subpage">
 
 <!-- Header -->
-<header id="header">
-    <div class="logo"><a href="index.html">Transitive <span>by TEMPLATED</span></a></div>
+<header id="header" class="altindex">
+    <div class="logo"><a href="index.html">Hospital Collaboration Resource <i class="fas fa-hospital"></i></a></div>
     <a href="#menu" class="toggle"><span>Menu</span></a>
 </header>
 
@@ -18,7 +19,7 @@
 <nav id="menu">
     <ul class="links">
         <li><a href="index.html">Home</a></li>
-        <li><a href=#>Log Out</a></li>
+        <li><a href="">Logout</a></li>
     </ul>
 </nav>
 
