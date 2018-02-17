@@ -1,1 +1,3 @@
-# Geek
+# Geekathon
+
+Project Hospital Collaboration Resource
