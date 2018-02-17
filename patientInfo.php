@@ -1,4 +1,17 @@
-<!DOCTYPE HTML>
+<?php
+require_once ('connect.php');
+session_start();
+$PID=$_POST['PID'];
+
+$q = "SELECT * FROM patient WHERE Patient_ID = ".$PID;
+$result = $mysqli->query($q);
+$row = $result->fetch_array();
+$pName = $row['Patient_Fname']." ".$row['Patient_Lname'];
+$pGender = $row['Patient_Gender'];
+$pDOB = $row['Patient_Birth'];
+$pAddr = $row['Patient_Address'];
+
+?>
 <html>
 <head>
     <title>Patient Information</title>
@@ -32,27 +45,27 @@
             </div>
             <div class="content">
                 <header class="align-center">
-                    <h2>Patient Name</h2>
-                    <p>1234567890</p>
+                    <h2><?php echo $pName; ?></h2>
+                    <p><?php echo $PID; ?></p>
                 </header>
                 <hr />
                 <h3>Patient Information</h3>
                 <dl>
                     <dt><b>Name</b></dt>
                     <dd>
-                        <p>Patient Name</p>
+                        <p><?php echo $pName; ?></p>
                     </dd>
                     <dt><b>Gender</b></dt>
                     <dd>
-                        <p>Male</p>
+                        <p><?php echo $pGender; ?></p>
                     </dd>
                     <dt><b>Birth Date</b></dt>
                     <dd>
-                        <p>Male</p>
+                        <p><?php echo $pDOB; ?></p>
                     </dd>
                     <dt><b>Address</b></dt>
                     <dd>
-                        <p>Male</p>
+                        <p><?php echo $pAddr; ?></p>
                     </dd>
                 </dl>
                 <hr>
@@ -115,6 +128,28 @@
                         </tr>
                         </thead>
                         <tbody>
+
+                        <?php
+                        $qLAB = "SELECT * FROM labinfo,hospital WHERE PID = ".$PID." AND labinfo.Hospital_ID=hospital.Hospital_ID ORDER BY timeStamp DESC";
+                        $result = $mysqli->query($qLAB);
+                        if (!$result) {
+                            echo "Select failed. Error: " . $mysqli->error;
+                        } else {
+                            while ($row = $result->fetch_array()) {
+                                ?>
+                                <tr>
+                                    <td><?php echo $row['timeStamp'];?></td>
+                                    <td><b><?php echo $row['Typeinfo'];?></b></td>
+                                    <td><?php echo $row['Hospital_Name'];?></td>
+                                    <td align="right">
+                                        <li><a href="" class="button special">Details</a></li>
+                                    </td>
+                                </tr>
+                                <?php
+                            }
+                        }
+                        ?>
+
                         <tr>
                             <td>February 20, 2018</td>
                             <td><b>X-ray films</b></td>

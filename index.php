@@ -1,9 +1,7 @@
-<!DOCTYPE HTML>
-<!--
-	Transitive by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
+<?php
+require_once ('connect.php');
+session_start();
+?>
 <html>
 	<head>
 		<title>Hospital Collaboration Resource</title>
@@ -16,32 +14,26 @@
 
 		<!-- Header -->
 			<header id="header" class="altindex">
-				<div class="logo"><a href="index.html">Hospital Collaboration Resource <i class="fas fa-hospital"></i></a></div>
+				<div class="logo"><a href="index.php">Hospital Collaboration Resource <i class="fas fa-hospital"></i></a></div>
 				<a href="#menu" class="toggle"><span>Menu</span></a>
 			</header>
 
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="">Logout</a></li>
 				</ul>
 			</nav>
 
-		<!-- Banner -->
-		<!--
-			To use a video as your background, set data-video to the name of your video without
-			its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
-			formats to work correctly.
-		-->
 		<section id="banner">
 			<div class="inner">
 				<h1>Search Patient</h1><br>
 				<p>The easiest way to match patients with the same diagnosis.</a></p>
-				<form method="post" action="#" class="alt">
+				<form method="post" action="patientInfo.php" class="alt">
 					<div class="row uniform">
 						<div class="9u 12u$(small)">
-							<input type="text" name="query" id="query" value="" placeholder="Patient ID" />
+							<input type="text" name="PID" id="PID" value="" placeholder="Patient ID" />
 						</div>
 						<div class="3u$ 12u$(small)">
 							<input type="submit" value="Search" class="fit" />
