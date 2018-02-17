@@ -24,7 +24,7 @@ $pAddr = $row['Patient_Address'];
 
 <!-- Header -->
 <header id="header" >
-    <div class="logo"><a href="index.html">Hospital Collaboration Resource <i class="fas fa-hospital"></i></a></div>
+    <div class="logo"><a href="index.php">Hospital Collaboration Resource <i class="fas fa-hospital"></i></a></div>
     <a href="#menu" class="toggle"><span>Menu</span></a>
 </header>
 
@@ -49,7 +49,7 @@ $pAddr = $row['Patient_Address'];
                     <p><?php echo $PID; ?></p>
                 </header>
                 <hr />
-                <h3>Patient Information</h3>
+                <h3><i class="fas fa-info-circle"></i> Patient Information</h3>
                 <dl>
                     <dt><b>Name</b></dt>
                     <dd>
@@ -69,7 +69,7 @@ $pAddr = $row['Patient_Address'];
                     </dd>
                 </dl>
                 <hr>
-                        <h3>Medical Record</h3>
+                        <h3><i class="fas fa-user-md"></i> Medical Record</h3>
                         <div class="table-wrapper" align="center">
                             <table>
                                 <thead>
@@ -131,12 +131,12 @@ $pAddr = $row['Patient_Address'];
                                 </tfoot>
                             </table>
                             <ul class="actions" align="center">
-                                <li><a href="#" class="button icon fa-download">Add more Record</a></li>
+                                <li><a href="record.php" class="button icon fa-download">Add more Record</a></li>
                             </ul>
                         </div>
 
                 <hr>
-                <h3>Laboratory Result</h3>
+                <h3><i class="fas fa-flask"></i> Laboratory Result</h3>
                 <div class="table-wrapper" align="center">
                     <table>
                         <thead>

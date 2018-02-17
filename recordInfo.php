@@ -34,14 +34,14 @@ $rName=$row['Rec_Name'];
 
 <!-- Header -->
 <header id="header" >
-    <div class="logo"><a href="index.html">Hospital Collaboration Resource <i class="fas fa-hospital"></i></a></div>
+    <div class="logo"><a href="index.php">Hospital Collaboration Resource <i class="fas fa-hospital"></i></a></div>
     <a href="#menu" class="toggle"><span>Menu</span></a>
 </header>
 
 <!-- Nav -->
 <nav id="menu">
     <ul class="links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="">Logout</a></li>
     </ul>
 </nav>
@@ -59,7 +59,7 @@ $rName=$row['Rec_Name'];
                     <p><?php echo $dName; ?>, <?php echo $hName; ?></p>
                 </header>
                 <hr>
-                <h3>Patient Information</h3>
+                <h3><i class="fas fa-info-circle"></i> Patient Information</h3>
                 <dl>
                     <dt><b>Patient Name</b></dt>
                     <dd>
@@ -75,7 +75,7 @@ $rName=$row['Rec_Name'];
                     </dd>
                 </dl>
                 <hr>
-                <h3>Record Information</h3>
+                <h3><i class="fas fa-user-md"></i> Record Information</h3>
                 <dl>
                     <dt><b>Record Date</b></dt>
                     <dd>

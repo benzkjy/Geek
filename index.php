@@ -28,7 +28,7 @@ session_start();
 
 		<section id="banner">
 			<div class="inner">
-				<h1>Search Patient</h1><br>
+				<h1><i class="fas fa-search"></i> Search Patient</h1><br>
 				<p>The easiest way to match patients with the same diagnosis.</a></p>
 				<form method="post" action="patientInfo.php" class="alt">
 					<div class="row uniform">
