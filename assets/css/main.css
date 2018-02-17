@@ -2024,7 +2024,7 @@
 
 			form .field.half {
 				display: inline-block;
-				width: 48%;
+				width: 100%;
 			}
 
 				form .field.half.first {
