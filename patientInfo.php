@@ -83,26 +83,46 @@ $pAddr = $row['Patient_Address'];
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>February 20, 2018</td>
-                                    <td><b>Heart Broken.</b></td>
-                                    <td>Dr.Nuttapol Saiboonreng</td>
-                                    <td>Thammasat Hospital</td>
-                                    <td>No</td>
-                                    <td align="right">
-                                        <li><a href="#" class="button special">Details</a></li>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>February 20, 2018</td>
-                                    <td><b>Heart Broken.</b></td>
-                                    <td>Dr.Nuttapol Saiboonreng</td>
-                                    <td>Thammasat Hospital</td>
-                                    <td>No</td>
-                                    <td align="right">
-                                        <li><a href="#" class="button special">Details</a></li>
-                                    </td>
-                                </tr>
+
+                                <?php
+                                $qLAB = "SELECT record.Rec_Date, record.Rec_Name,
+                                          user.Doctor_Fname,user.Doctor_Lname,hospital.hospital_Name,
+                                                record.Prescription
+                                          FROM record,patient,user,hospital 
+                                          WHERE patient.Patient_ID = ".$PID." 
+                                          AND patient.Patient_ID=record.Patient_ID 
+                                          AND user.Doctor_ID = record.Doctor_ID 
+                                          AND user.Doctor_ID = record.Doctor_ID
+                                          AND user.Hospital_ID = hospital.Hospital_ID
+                                          ORDER BY record.Rec_Date";
+                                $result = $mysqli->query($qLAB);
+                                if (!$result) {
+                                    echo "Select failed. Error: " . $mysqli->error;
+                                } else {
+                                    while ($row = $result->fetch_array()) {
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $row['Rec_Date'];?></td>
+                                            <td><b><?php echo $row['Rec_Name'];?></b></td>
+                                            <td><?php echo $row['Doctor_Fname']." ".$row['Doctor_Lname'];?></td>
+                                            <td><?php echo $row['hospital_Name'];?></td>
+                                            <td><?php
+                                                if ($row['Prescription']==NULL){
+                                                    echo 'No';
+                                                } else {
+                                                    echo 'Yes';
+                                                }
+                                                ?></td>
+                                            <td align="right">
+                                                <li><a form="#" class="button special">Details</a></li>
+                                            </td>
+                                        </tr>
+                                        <?php
+                                    }
+                                }
+                                ?>
+
+                                
                                 </tbody>
                                 <tfoot>
                                 <tr>
@@ -150,22 +170,6 @@ $pAddr = $row['Patient_Address'];
                         }
                         ?>
 
-                        <tr>
-                            <td>February 20, 2018</td>
-                            <td><b>X-ray films</b></td>
-                            <td>Thammasat Hospital</td>
-                            <td align="right">
-                                <li><a href="#" class="button special">Details</a></li>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>February 20, 2018</td>
-                            <td><b>X-ray films</b></td>
-                            <td>Thammasat Hospital</td>
-                            <td align="right">
-                                <li><a href="#" class="button special">Details</a></li>
-                            </td>
-                        </tr>
                         </tbody>
                         <tfoot>
                         <tr>
