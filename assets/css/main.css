@@ -2215,8 +2215,8 @@
 	input[type="email"],
 	select,
 	textarea {
-		background: rgb(224, 219, 219);
-		border-color: rgba(255, 255, 255, 0.25);
+		background: rgb(241, 241, 241);
+		border-color: rgba(94, 91, 91, 0.294);
 	}
 
 		input[type="text"]:focus,
@@ -3517,7 +3517,7 @@
 			animation: reveal-header 0.5s ease;
 		}
 
-		#header.alt {
+		#header.altindex {
 			-moz-animation: none;
 			-webkit-animation: none;
 			-ms-animation: none;
@@ -3527,6 +3527,16 @@
 			overflow: hidden;
 			position: absolute;
 			top: 1.5em;
+		}
+
+		#header.alt {
+			-moz-animation: none;
+			-webkit-animation: none;
+			-ms-animation: none;
+			animation: none;
+			box-shadow: none;
+			overflow: hidden;
+			position: absolute;
 		}
 
 			#header.alt h1 {
