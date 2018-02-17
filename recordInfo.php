@@ -2,10 +2,11 @@
 require_once ('connect.php');
 session_start();
 $RID=$_GET['Rec_ID'];
-$q = "SELECT * FROM record,patient,user 
+$q = "SELECT * FROM record,patient,user,hospital 
                 WHERE Rec_ID = ".$RID."
                 AND record.Doctor_ID=user.Doctor_ID
-                AND record.Patient_ID=patient.Patient_ID";
+                AND record.Patient_ID=patient.Patient_ID
+                AND user.Hospital_ID = hospital.Hospital_ID";
 $result = $mysqli->query($q);
 $row = $result->fetch_array();
 $pName = $row['Patient_Fname']." ".$row['Patient_Lname'];
@@ -17,7 +18,9 @@ $recDat = $row['Rec_Date'];
 $Des = $row['Desc'];
 $Pres = $row['Prescription'];
 $rid=$row['Rec_ID'];
-
+$dName=$row['Doctor_Fname']." ".$row['Doctor_Lname'];
+$hName=$row['Hospital_Name'];
+$rName=$row['Rec_Name'];
 ?>
 <html>
 <head>
@@ -52,8 +55,8 @@ $rid=$row['Rec_ID'];
             </div>
             <div class="content">
                 <header class="align-center">
-                    <h2>Record Name</h2>
-                    <p>Doctor Name, Hospital Name</p>
+                    <h2><?php echo $rName; ?></h2>
+                    <p><?php echo $dName; ?>, <?php echo $hName; ?></p>
                 </header>
                 <hr>
                 <h3>Patient Information</h3>
@@ -84,7 +87,13 @@ $rid=$row['Rec_ID'];
                     </dd>
                     <dt><b>Prescription</b></dt>
                     <dd>
-                        <p><?php echo $Pres; ?></p>
+                        <p><?php
+                            if ($Pres==NULL){
+                                echo 'No prescription in this record.';
+                            } else {
+                                echo $Pres;
+                            }
+                            ?></td></p>
                     </dd>
                 </dl>
 
