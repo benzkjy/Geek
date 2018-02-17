@@ -4,11 +4,11 @@ session_start();
 $PID=$_POST['PID'];
 
 $q = "SELECT * FROM patient WHERE Patient_ID = ".$PID;
-if (!$res) {
+$result = $mysqli->query($q);
+if (!$result) {
     printf("Errormessage: %s\n", $mysqli->error);
     exit();
 }
-$result = $mysqli->query($q);
 $row = $result->fetch_array();
 $pName = $row['Patient_Fname']." ".$row['Patient_Lname'];
 $pGender = $row['Patient_Gender'];
