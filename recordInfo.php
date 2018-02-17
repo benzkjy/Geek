@@ -10,8 +10,13 @@ $result = $mysqli->query($q);
 $row = $result->fetch_array();
 $pName = $row['Patient_Fname']." ".$row['Patient_Lname'];
 $pGender = $row['Patient_Gender'];
+$pWH = $row['Weight']." kg ".$row['Height']." cm";
 $pDOB = $row['Patient_Birth'];
 $pAddr = $row['Patient_Address'];
+$recDat = $row['Rec_Date'];
+$Des = $row['Desc'];
+$Pres = $row['Prescription'];
+$rid=$row['Rec_ID'];
 
 ?>
 <html>
@@ -55,15 +60,15 @@ $pAddr = $row['Patient_Address'];
                 <dl>
                     <dt><b>Patient Name</b></dt>
                     <dd>
-                        <p>Patient Name</p>
+                        <p><?php echo $pName; ?></p>
                     </dd>
                     <dt><b>Gender</b></dt>
                     <dd>
-                        <p>Male</p>
+                        <p><?php echo $pGender; ?></p>
                     </dd>
                     <dt><b>Weight and Height</b></dt>
                     <dd>
-                        <p>65 kg, 175 km</p>
+                        <p><?php echo $pWH; ?></p>
                     </dd>
                 </dl>
                 <hr>
@@ -71,22 +76,22 @@ $pAddr = $row['Patient_Address'];
                 <dl>
                     <dt><b>Record Date</b></dt>
                     <dd>
-                        <p>March 24, 2017</p>
+                        <p><?php echo $recDat; ?></p>
                     </dd>
                     <dt><b>Description</b></dt>
                     <dd>
-                        <p>kvhksdfhgiukrshfivhdgkhiglhvio'hgihdfg'sidhfgdjfgshdfghdifb</p>
+                        <p><?php echo $Des; ?></p>
                     </dd>
                     <dt><b>Prescription</b></dt>
                     <dd>
-                        <p>gshjnjghifudkbvnijhsgnfjjshgfnjghdn</p>
+                        <p><?php echo $Pres; ?></p>
                     </dd>
                 </dl>
 
                 <hr>
                 <ul class="actions" align="center">
-                    <li><a href="#" class="button icon fa-download">Add more Record</a></li>
-                    <li><a href="#" class="button alt icon fa-search">Compare Others</a></li>
+                    <li><a href="record.php" class="button icon fa-download">Add more Record</a></li>
+                    <li><a href="search.php?rid1="<?php echo $rid; ?> class="button alt icon fa-search">Compare Others</a></li>
                 </ul>
 
             </div>
