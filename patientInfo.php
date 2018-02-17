@@ -1,10 +1,12 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 require_once ('connect.php');
 session_start();
 $PID=$_POST['PID'];
 
 $q = "SELECT * FROM patient WHERE Patient_ID = ".$PID;
-$result = $mysqli->query($q);
+//$result = $mysqli->query($q);
 if (!$result) {
     printf("Errormessage: %s\n", $mysqli->error);
     exit();
