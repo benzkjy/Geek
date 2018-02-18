@@ -6,7 +6,7 @@ session_start();
 $PID=$_POST['PID'];
 
 $q = "SELECT * FROM patient WHERE Patient_ID = ".$PID;
-//$result = $mysqli->query($q);
+$result = $mysqli->query($q);
 if (!$result) {
     printf("Errormessage: %s\n", $mysqli->error);
     exit();
