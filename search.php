@@ -102,7 +102,7 @@ $RID1=$_GET['rid1'];
                                     <td><?php echo $row['Patient_ID'];?></td>
                                     <td><b><?php echo $row['Patient_Fname']." ".$row['Patient_Lname'];?></b></td>
                                     <td><?php echo $row['Patient_Gender'];?></td>
-                                    <td>May 16, 2015</td>
+                                    <td><?php echo $row['Rec_Date'];?></td>
                                     <td align="right">
                                         <li><a href="compare.php?rid1=<?php echo $RID1; ?>&rid2=<?php echo $row['Rec_ID']; ?>" class="button special">Compare</a></li>
                                     </td>
