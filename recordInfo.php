@@ -21,6 +21,7 @@ $rid=$row['Rec_ID'];
 $dName=$row['Doctor_Fname']." ".$row['Doctor_Lname'];
 $hName=$row['Hospital_Name'];
 $rName=$row['Rec_Name'];
+$PID=$row['Patient_ID'];
 ?>
 <html>
 <head>
@@ -99,7 +100,7 @@ $rName=$row['Rec_Name'];
 
                 <hr>
                 <ul class="actions" align="center">
-                    <li><a href="record.php" class="button icon fa-download">Add more Record</a></li>
+                    <li><a href="record.php?PID=<?php echo $PID;?>" class="button icon fa-download">Add more Record</a></li>
                     <li><a href="search.php?rid1=<?php echo $rid; ?>" class="button alt icon fa-search">Compare Others</a></li>
                 </ul>
 

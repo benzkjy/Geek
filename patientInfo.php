@@ -1,16 +1,16 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
 require_once ('connect.php');
 session_start();
 $PID=$_POST['PID'];
 
 $q = "SELECT * FROM patient WHERE Patient_ID = ".$PID;
 $result = $mysqli->query($q);
-if (!$result) {
-    printf("Errormessage: %s\n", $mysqli->error);
-    exit();
-}
+//if (!$result) {
+//    printf("Errormessage: %s\n", $mysqli->error);
+//    exit();
+//}
 $row = $result->fetch_array();
 $pName = $row['Patient_Fname']." ".$row['Patient_Lname'];
 $pGender = $row['Patient_Gender'];
@@ -137,7 +137,7 @@ $pAddr = $row['Patient_Address'];
                                 </tfoot>
                             </table>
                             <ul class="actions" align="center">
-                                <li><a href="record.php" class="button icon fa-download">Add more Record</a></li>
+                                <li><a href="record.php?PID=<?php echo $PID;?>" class="button icon fa-download">Add more Record</a></li>
                             </ul>
                         </div>
 

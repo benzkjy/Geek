@@ -1,3 +1,15 @@
+<?php
+require_once ('connect.php');
+session_start();
+$PID=$_GET['PID'];
+$q = "SELECT * FROM patient WHERE Patient_ID = ".$PID;
+$result = $mysqli->query($q);
+$row = $result->fetch_array();
+$pName = $row['Patient_Fname']." ".$row['Patient_Lname'];
+$pGender = $row['Patient_Gender'];
+$pDOB = $row['Patient_Birth'];
+$pAddr = $row['Patient_Address'];
+?>
 <html>
 	<head>
 		<title>Record New Patient</title>
@@ -35,8 +47,8 @@
                                     <input name="name" id="name" type="text" placeholder="Record Name">
                                 </div>
                                 <div class="field half first">
-                                    <label for="name">Patient ID</label>
-                                    <input name="name" id="name" type="text" placeholder="Patient ID">
+                                    <label for="name">Patient Name</label>
+                                    <h3><?php echo $pName; ?></h3>
                                 </div>
                                 <div class="field half first">
                                     <label for="name">Weight</label>
@@ -55,12 +67,12 @@
                                     <textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
                                 </div>
                                 <div class="field half first">
-                                    <label for="name">Doctor ID</label>
-                                    <input name="name" id="name" type="text" placeholder="Doctor ID">
+                                    <label for="name">Doctor Name</label>
+                                    <h3>Phayut Janocha</h3>
                                 </div>
                                 <ul class="actions align-center">
                                     <li>
-                                        <input value="Submit" class="button special" type="submit">
+                                        <input  value="Submit" class="button special" type="submit">
                                     </li>
                                 </ul>
                             </form>
