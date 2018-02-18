@@ -37,14 +37,14 @@ $RID1=$_GET['rid1'];
 
 <!-- Header -->
 <header id="header" >
-    <div class="logo"><a href="index.html">Hospital Collaboration Resource <i class="fas fa-hospital"></i></a></div>
+    <div class="logo"><a href="index.php">Hospital Collaboration Resource <i class="fas fa-hospital"></i></a></div>
     <a href="#menu" class="toggle"><span>Menu</span></a>
 </header>
 
 <!-- Nav -->
 <nav id="menu">
     <ul class="links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="">Logout</a></li>
     </ul>
 </nav>
@@ -104,7 +104,7 @@ $RID1=$_GET['rid1'];
                                     <td><?php echo $row['Patient_Gender'];?></td>
                                     <td>May 16, 2015</td>
                                     <td align="right">
-                                        <li><a href="compare.php?rid1=<?php echo $row['Rec_ID']; ?>&rid2=1" class="button special">Details</a></li>
+                                        <li><a href="compare.php?rid1=<?php echo $row['Rec_ID']; ?>&rid2=1" class="button special">Compare</a></li>
                                     </td>
                                 </tr>
                                 <?php

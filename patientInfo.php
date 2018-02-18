@@ -37,7 +37,7 @@ $pAddr = $row['Patient_Address'];
 <!-- Nav -->
 <nav id="menu">
     <ul class="links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="">Logout</a></li>
     </ul>
 </nav>
