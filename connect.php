@@ -6,4 +6,5 @@ $conn = new mysqli($Data_Source, $User_Id, $Password, 'health');
 if($conn->connect_errno){
     echo $conn->connect_errno.": ".$conn->connect_error;
 }
+$mysqli=$conn;
 ?>
