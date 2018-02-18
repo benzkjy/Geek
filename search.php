@@ -87,7 +87,7 @@ $RID1=$_GET['rid1'];
 
                         <?php
                         $q = "SELECT * FROM record,patient,user ,hospital
-                WHERE Rec_ID IS NOT ".$RID1."
+                WHERE Rec_ID != ".$RID1."
                 AND record.Doctor_ID=user.Doctor_ID
                 AND record.Patient_ID=patient.Patient_ID
                 AND user.Hospital_ID = hospital.Hospital_ID
