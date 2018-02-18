@@ -92,6 +92,7 @@ $RID1=$_GET['rid1'];
                 AND record.Doctor_ID=user.Doctor_ID
                 AND record.Patient_ID=patient.Patient_ID
                 AND user.Hospital_ID = hospital.Hospital_ID
+                ORDER BY record.Rec_date DESC
                 ";
                         $result = $mysqli->query($q);
                         if (!$result) {

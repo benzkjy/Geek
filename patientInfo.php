@@ -100,7 +100,7 @@ $pAddr = $row['Patient_Address'];
                                           AND user.Doctor_ID = record.Doctor_ID 
                                           AND user.Doctor_ID = record.Doctor_ID
                                           AND user.Hospital_ID = hospital.Hospital_ID
-                                          ORDER BY record.Rec_Date";
+                                          ORDER BY record.Rec_Date DESC";
                                 $result = $mysqli->query($qLAB);
                                 if (!$result) {
                                     echo "Select failed. Error: " . $mysqli->error;
